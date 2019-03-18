@@ -6,8 +6,33 @@
 </head>
 <body>
 <p id ='text'> Javascript DOM :: Changing paragraph style</p>
+
 <div>
 <button id="style" onclick="js_new_style()">New style</button>
 </div>
+
+<script type="text/javascript">
+	function js_new_style(){
+		var text = document.getElementById("text");
+		var botton = document.getElementById("style");
+
+		text.style.fontSize = "35px";
+		text.style.fontStyle = "italic";
+		text.style.color = "red";
+		botton.textContent = "previous style";
+		botton.onclick = js_default_style;
+	}
+
+	function js_default_style(){
+        var text = document.getElementById("text");
+        var botton = document.getElementById("style");
+
+        text.style.fontSize = "";
+        text.style.fontStyle = "";
+        text.style.color = "";
+        botton.textContent = "new style";
+        botton.onclick = js_new_style;
+    }
+</script>
 </body>
 </html>
